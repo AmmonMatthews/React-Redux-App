@@ -1,5 +1,5 @@
 // REDUCERS
-import { FETCHING_JOKE_START, FETCHING_JOKE_SUCCESS, FETCHING_JOKE_FAILURE, FETCHING_JOKES_START } from '../actions'
+import { FETCHING_JOKE_START, FETCHING_JOKE_SUCCESS, FETCHING_JOKE_FAILURE, FETCHING_JOKES_START, FETCHING_JOKES_SUCCESS } from '../actions'
 
 const initialState = {
     isLoading: false,
@@ -35,6 +35,13 @@ export const reducer = (state = initialState, action) => {
                     isLoading: true
                 }
             
+            case FETCHING_JOKES_SUCCESS:
+                return{
+                    ...state,
+                    isLoading: false,
+                    jokes: action.payload
+
+                }
         default:
             return state
     }

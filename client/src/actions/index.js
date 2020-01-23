@@ -28,11 +28,12 @@ export const fetchingJoke = () => dispatch => {
 export const fetchingJokes = () => dispatch =>{
     dispatch({type: FETCHING_JOKES_START});
     axios
-        .get('')
+        .get('https://official-joke-api.appspot.com/jokes/ten')
         .then(res => {
-            console.log(res)
+            dispatch({type: FETCHING_JOKES_SUCCESS, payload: res.data})
+            console.log("get", res.data)
         } )
-        .err(err => {
+        .catch(err => {
             dispatch({type: FETCHING_JOKES_FAILURE, payload: err.response.status})
         })
 

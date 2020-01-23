@@ -12,7 +12,6 @@ const SingleJoke = (props) => {
     return(
         <div>
             <h1>Dad Jokes</h1>
-            <Link to="/jokes">Ten Jokes</Link>
             {!props.jokes && !props.isLoading && !props.error && <h2>Press the button to get a joke</h2>}
 
             {props.isLoading && (
@@ -38,6 +37,8 @@ const SingleJoke = (props) => {
 
 
             <button onClick={props.fetchingJoke}>Get Joke</button>
+            <Link to="/joke"><button>Get Ten Jokes</button></Link>
+
         </div>
     )
 };

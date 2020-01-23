@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
     <Switch>
-      <Route path="/jokes">
+      <Route path="/joke">
         <TenJokes />
       </Route>
       <Route path="/">
