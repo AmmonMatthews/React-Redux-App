@@ -34,8 +34,12 @@ const TenJokes = props => {
                    return( <Joke key={item.id} item={item} />)
                 })}
 
+            {props.error && !props.jokes &&
+                <div>
+                    <p>{props.error + ' No Jokes Found'}</p>
+                </div>
+            }
 
-           
         </div>
     )
 }
@@ -44,9 +48,9 @@ const TenJokes = props => {
 const mapStateToProps= state => {
     
     return{
-        isLoading: state.isLoading,
-        jokes: state.jokes,
-        error: state.error
+        isLoading: state.tenReducer.isLoading,
+        jokes: state.tenReducer.jokes,
+        error: state.tenReducer.error
     }
 }
 

@@ -44,10 +44,11 @@ const SingleJoke = (props) => {
 };
 
 const mapStateToProps = state => {
+    console.log(state)
     return {
-        isLoading:state.isLoading, 
-        jokes: state.jokes,
-        error: state.error
+        isLoading:state.singleReducer.isLoading, 
+        jokes: state.singleReducer.jokes,
+        error: state.singleReducer.error
     }
 }
 
