@@ -30,9 +30,12 @@ const TenJokes = props => {
             }
 
             {!props.isLoading && props.jokes && 
-                props.jokes.map(item => {
-                   return( <Joke key={item.id} item={item} />)
+                <div className="ten-jokes">
+                    {props.jokes.map(item => {
+                   return(  <Joke key={item.id} item={item} />)
                 })}
+                </div>
+}
 
             {props.error && !props.jokes &&
                 <div>

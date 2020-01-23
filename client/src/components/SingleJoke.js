@@ -7,7 +7,7 @@ import { fetchingJoke } from '../actions';
 
 
 const SingleJoke = (props) => {
-    console.log("props", props)
+    
 
     return(
         <div>
@@ -24,7 +24,7 @@ const SingleJoke = (props) => {
                 />
               )}
             {props.jokes && !props.loading &&
-                <div>
+                <div className="joke">
                     <p> {props.jokes.setup}</p>
                     <p>Answer: {props.jokes.punchline}</p>
                 </div> }
@@ -44,7 +44,7 @@ const SingleJoke = (props) => {
 };
 
 const mapStateToProps = state => {
-    console.log(state)
+    
     return {
         isLoading:state.singleReducer.isLoading, 
         jokes: state.singleReducer.jokes,
