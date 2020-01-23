@@ -12,7 +12,7 @@ const SingleJoke = (props) => {
     return(
         <div>
             <h1>Dad Jokes</h1>
-            {!props.jokes && !props.isLoading && !props.error && <h2>Press the button to get a joke</h2>}
+            {!props.jokes && !props.isLoading && !props.error && <h2>Press the button to get a joke or ten jokes</h2>}
 
             {props.isLoading && (
                 <Loader

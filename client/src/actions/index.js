@@ -15,7 +15,7 @@ export const fetchingJoke = () => dispatch => {
     axios
         .get('https://official-joke-api.appspot.com/jokes/random')
         .then(res => {
-            // console.log(res.data)
+           
             dispatch({ type: FETCHING_JOKE_SUCCESS, payload: res.data })
         })
         .catch(err => {console.log('error', err.response)
@@ -31,7 +31,7 @@ export const fetchingJokes = () => dispatch =>{
         .get('https://official-joke-api.appspot.com/jokes/ten')
         .then(res => {
             dispatch({type: FETCHING_JOKES_SUCCESS, payload: res.data})
-            console.log("get", res.data)
+           
         } )
         .catch(err => {
             dispatch({type: FETCHING_JOKES_FAILURE, payload: err.response.status})

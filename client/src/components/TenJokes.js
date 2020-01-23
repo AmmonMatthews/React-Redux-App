@@ -2,8 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
+import Joke from './Joke';
 
 import { fetchingJokes } from '../actions'
+
 
 
 const TenJokes = props => {
@@ -14,7 +16,7 @@ const TenJokes = props => {
            <button onClick={props.fetchingJokes}>Get Jokes</button>
            <Link to="/"><button>Single Joke</button></Link>
             {!props.isLoading && !props.jokes && !props.error &&
-                <h2> Press me to get multiple jokes  </h2>
+                <h2> Press me to get multiple jokes or return to single joke page </h2>
             }
 
             {props.isLoading &&
@@ -29,10 +31,7 @@ const TenJokes = props => {
 
             {!props.isLoading && props.jokes && 
                 props.jokes.map(item => {
-                   return( <div key={item.id} className="tenJokes">
-                        <p>{item.setup}</p>
-                        <p>{item.punchline}</p>
-                    </div>)
+                   return( <Joke key={item.id} item={item} />)
                 })}
 
 
