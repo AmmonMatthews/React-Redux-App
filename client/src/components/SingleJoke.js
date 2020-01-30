@@ -37,7 +37,7 @@ const SingleJoke = (props) => {
 
 
             <button onClick={props.fetchingJoke}>Get Joke</button>
-            <Link to="/joke"><button>Get Ten Jokes</button></Link>
+            <Link to="/joke"><button> Ten Jokes</button></Link>
 
         </div>
     )
